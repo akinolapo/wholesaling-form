@@ -1,0 +1,300 @@
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.125rem;
+        line-height: 1.4;
+        font-weight: 400;
+        box-sizing: border-box;
+        text-align: center;
+        color: #fff;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-image:
+            /* top, transparent red */
+            linear-gradient(rgba(0, 255, 255, 0.45),
+                rgba(0, 255, 255, 0.45)),
+            /*image */
+            url('/pexels-pixabay-210617.jpg');
+    }
+    #title, #description{
+        color: #000;
+    }
+
+    .myform {
+        background-color: rgba(27, 50, 27, 0.8);
+        text-align: left;
+        margin-left: 20%;
+        margin-right: 20%;
+        border-radius: .25rem;
+    }
+
+    .myform form {
+        margin-left: 10%;
+        margin-right: 15%;
+        border: none;
+    }
+
+    #name,
+    #OtherProperty,
+    #OtherLiens,
+    #address,
+    #email,
+    #phone,
+    #dropdown {
+        width: 100%;
+        height: 2.375rem;
+        padding: 0.375rem 0.75rem;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+    }
+
+    #question,
+    #phone-label,
+    #email-label,
+    #name-label,
+    #OtherProperty-label,
+    #OtherLiens-label,
+    #address-label {
+        display: flex;
+        align-item: center;
+        margin-top: 1rem;
+        margin-bottom: .3rem;
+    }
+
+    .rate {
+        display: inline-flex;
+    }
+
+    .rate label {
+        margin-top: none;
+    }
+
+    .myform form textarea {
+        width: 100%;
+    }
+
+    #submit {
+        display: block;
+        width: 100%;
+        color: #fff;
+        background-color: #37af65;
+        padding: 0.75rem;
+        border-radius: 2px;
+        border: none;
+        cursor: pointer;
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .myform form input[type="radio"],
+    .myform form input[type="checkbox"] {
+        display: inline-block;
+        margin-right: 0.625rem;
+        min-height: 1.25rem;
+        min-width: 1.25rem;
+    }
+
+    @media(max-width: 900px) {
+        .myform {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    @media(max-width: 700px) {
+        .myform {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+    }
+
+    @media(max-width: 575px) {
+        .myform {
+            margin: 0;
+        }
+    }
+
+</style>
+
+
+
+<body>
+    <br>
+    <h1 id="title">Wholesaling</h1>
+    <p id="description"><i>Hey! Thanks for requesting a free evaluation with Mike Buys Any House. <br>It takes just a few minutes to get the ball rolling!
+        </i></p>
+    <div class="myform">
+        <br><br>
+        <form id="survey-form>
+            <label for=" name" id="name-label">Homeowners Name</label>
+            <input type="text" id="name" placeholder="Homeowners name (John Doe)" required>
+            <label for=" address" id="address-label">Homeowners Address</label>
+            <input type="text" id="address" placeholder="Homeowners address (...)" required>
+            <label for="email" id="email-label">Homeowners Email</label>
+            <input type="email" id="email" placeholder="Homeowners email address (john.doe@mail.com)" required>
+            <label for="phone" id="phone-label">Homeowners Cellphone (optional)</label>
+            <input type="tel" id="phone" placeholder="Homeowners Cellphone (892 2993 3993)">
+            <label for="property-type" id="question">What type of property do you own?</label>
+            <select id="dropdown" required>
+                <option value="" disabled selected>Select Property type</option>
+                <option value="Single family home">Single family home</option>
+                <option value="Multi family home">Multi family home</option>
+                <option value="Mobile home">Mobile home</option>
+                <option value="Manufactured home"> Manufactured home</option>
+                <option value="Apartment">Apartment</option>
+                <option value="Condominium">Condominium</option>
+                <option value="Townhouse">Townhouse</option>
+                <option value="Land">Land</option>
+                <option value="Other">Other</option>
+            </select>
+            <label for=" Other Property" id="OtherProperty-label">Other Property Type(Specify)</label>
+            <input type="text" id="OtherProperty" placeholder="Other Property(Specify)" required>
+                                                                                 
+            <label for="How many years have you owned the house?" id="question">How many years have you owned the house?</label>
+            <div class="rate">
+                <input type="radio" name="year" checked>
+                <label for=" less than a year"> less than a year</label>
+            </div>
+            <br>
+            <div class="rate">
+                <input type="radio" name="year">
+                <label for="1-3 years">1-3 years</label>
+            </div>
+            <br>
+            <div class="rate">
+                <input type="radio" name="year">
+                <label for="4-6 years">4-6 years</label>
+            </div>
+            <br>
+            <div class="rate">
+                <input type="radio" name="year">
+                <label for="7-10 years">7-10 years</label>
+            </div>
+            <br>
+            <div class="rate">
+                <input type="radio" name="year">
+                <label for="more than 11 years">more than 11 years</label>
+            </div>
+            <label for="Who is living at the property?" id="question">Who is living at the property?</label>
+            <select id="dropdown" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="Owner">Owner</option>
+                <option value="Tenant">Tenant</option>
+                <option value="Vacant">Vacant</option>
+            </select>
+
+            <label for="What is the current condition of the property?" id="question">What is the current condition of the property?</label>
+            <div class="rate">
+                <input type="checkbox" value="Excellent" name="condition" onclick="onlyOne(this)">
+                <label for="Excellent">Excellent</label>
+            </div>
+            <br>
+            <div class="rate">
+                <input type="checkbox" value="Good" name="condition" onclick="onlyOne(this)">
+                <label for="Good">Good</label>
+            </div>
+            <br>
+            <div class="rate">
+                <input type="checkbox" value="Needs some work" name="condition" onclick="onlyOne(this)">
+                <label for="Needs some work">Needs some work</label>
+            </div>
+            <br>
+            <div class="rate">
+                <input type="checkbox" value="Needs a lot of work" name="condition" onclick="onlyOne(this)">
+                <label for="Needs a lot of work">Needs a lot of work</label>
+            </div>
+                                                
+                                                
+            <label for="Are there any liens of the property?" id="question">Are there any liens of the property?</label>
+            <select id="dropdown" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="Tax">Tax</option>
+                <option value="Utilities">Utilities</option>
+                <option value="Water liens">Water liens</option>
+                <option value="Hospital liens">Hospital liens</option>
+                <option value="Others">Others</option>
+                <option value="No">No</option>
+            </select>                                 
+                       
+            <label for=" Other liens" id="OtherLiens-label">Other Liens of Property(Specify)</label>
+            <input type="text" id="OtherLiens" placeholder="Other Liens of Property(Specify)" required>
+            
+             <label for="Do you have any mortgage on the property?" id="question">Do you have any mortgage on the property?</label>
+            <div class="rate">
+                <input type="radio" name="mortgage" checked>
+                <label for=" Yes">Yes</label>
+            </div>
+            <br>
+            <div class="rate">
+                <input type="radio" name="mortgage">
+                <label for="No">No</label>
+            </div>
+                               
+                               
+            <label for="If yes, how many payments are behind?" id="question">If yes, how many payments are behind?</label>
+            <select id="dropdown" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="(1 month">1 month</option>
+                <option value=" 3-6 months">3-6 months</option>
+                <option value="7-1 years">7-1 years</option>
+                <option value="2+ years">2+ years</option>
+            </select>  
+                                        
+                
+                 <label for="When do you like to sell your house?" id="question">When do you like to sell your house?</label>
+            <div class="rate">
+                <input type="checkbox" value="today" name="time" onclick="onlyOne(this)">
+                <label for="today">today</label>
+            </div>
+            <br>
+            <div class="rate">
+                <input type="checkbox" value=" 1 week" name="time" onclick="onlyOneTime(this)">
+                <label for=" 1 week"> 1 week</label>
+            </div>
+            <br>
+            <div class="rate">
+                <input type="checkbox" value="2 weeks" name="time" onclick="onlyOneTime(this)">
+                <label for="2 weeks">2 weeks</label>
+            </div>
+            <br>
+            <div class="rate">
+                <input type="checkbox" value="1 month" name="time" onclick="onlyOneTime(this)">
+                <label for="1 month">1 month</label>
+            </div>
+            <br>
+            <div class="rate">
+                <input type="checkbox" value="more than 3 months" name="time" onclick="onlyOneTime(this)">
+                <label for="more than 3 months">more than 3 months</label>
+            </div>
+            <br>
+            <div class="rate">
+                <input type="checkbox" value="not sure" name="time" onclick="onlyOneTime(this)">
+                <label for="not sure">not sure</label>
+            </div>
+            <br>
+                                                
+                                                
+            <input type="submit" id="submit" value="Submit">
+            <br><br>
+        </form>
+    </div>
+
+
+    <script>
+        function onlyOne(checkbox) {
+            var checkboxes = document.getElementsByName('condition')
+            checkboxes.forEach((item) => {
+                if (item !== checkbox) item.checked = false
+            })
+        }
+          function onlyOneTime(checkbox) {
+            var checkboxes = document.getElementsByName('time')
+            checkboxes.forEach((item) => {
+                if (item !== checkbox) item.checked = false
+            })
+        }                                                 
+
+    </script>
+
+</body>
