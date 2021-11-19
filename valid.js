@@ -32,7 +32,7 @@ async function validateFormData () {
 }
 
 formElement.addEventListener('submit', async (ev) => {
-    ev.preventDefault()
+//     ev.preventDefault()
     try {
         await validateFormData()
     } catch (error) {
