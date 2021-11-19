@@ -16,7 +16,7 @@
             background-attachment: fixed;
             background-image:
                 /* top, transparent red */
-                linear-gradient(rgba(0, 255, 155, 0.45),
+                linear-gradient(rgba(0, 255, 255, 0.45),
                     rgba(0, 255, 255, 0.45)),
                 /*image */
                 url('/pexels-pixabay-210617.jpg');
@@ -133,7 +133,7 @@
         </i></p>
     <div class="myform">
         <br><br>
-        <form id="survey-form" action="https://formspree.io/f/xwkagyrk" method="POST">
+        <form id="survey-form">
             <label for="name" id="name-label">Homeowners Name</label>
             <input type="text" name="name" id="name" placeholder="Homeowners name (John Doe)" required>
             <label for=" address" id="address-label">Homeowners Address</label>
@@ -162,27 +162,27 @@
 
             <label for="How many years have you owned the house?" id="question">How many years have you owned the house?</label>
             <div class="rate">
-                <input type="radio" name="year" checked>
-                <label for=" less than a year"> less than a year</label>
+                <input type="radio" value="less than a year" name="year" checked>
+                <label for="less than a year">less than a year</label>
             </div>
             <br>
             <div class="rate">
-                <input type="radio" name="year">
+                <input type="radio" name="year" value="1-3 years">
                 <label for="1-3 years">1-3 years</label>
             </div>
             <br>
             <div class="rate">
-                <input type="radio" name="year">
+                <input type="radio" name="year" value=">4-6 years">
                 <label for="4-6 years">4-6 years</label>
             </div>
             <br>
             <div class="rate">
-                <input type="radio" name="year">
+                <input type="radio" name="year" value="7-10 years">
                 <label for="7-10 years">7-10 years</label>
             </div>
             <br>
             <div class="rate">
-                <input type="radio" name="year">
+                <input type="radio" name="year" value="more than 11 years">
                 <label for="more than 11 years">more than 11 years</label>
             </div>
             <label for="Who is living at the property?" id="question">Who is living at the property?</label>
@@ -195,22 +195,22 @@
 
             <label for="What is the current condition of the property?" id="question">What is the current condition of the property?</label>
             <div class="rate">
-                <input type="radio" name="condition" checked>
+                <input type="radio" name="condition" value="Excellent" checked>
                 <label for="Excellent">Excellent</label>
             </div>
             <br>
             <div class="rate">
-                <input type="radio" name="condition">
+                <input type="radio" name="condition" value="Good">
                 <label for="Good">Good</label>
             </div>
             <br>
             <div class="rate">
-                <input type="radio" name="condition">
+                <input type="radio" name="condition" value="Needs some work">
                 <label for="Needs some work">Needs some work</label>
             </div>
             <br>
             <div class="rate">
-                <input type="radio" name="condition">
+                <input type="radio" name="condition" value="Needs a lot of work">
                 <label for="Needs a lot of work">Needs a lot of work</label>
             </div>
 
@@ -231,12 +231,12 @@
 
             <label for="Do you have any mortgage on the property?" id="question">Do you have any mortgage on the property?</label>
             <div class="rate">
-                <input type="radio" name="mortgage" checked>
+                <input type="radio" name="mortgage" value="Yes" checked>
                 <label for=" Yes">Yes</label>
             </div>
             <br>
             <div class="rate">
-                <input type="radio" name="mortgage">
+                <input type="radio" name="mortgage" value="No">
                 <label for="No">No</label>
             </div>
 
@@ -244,8 +244,8 @@
             <label for="If yes, how many payments are behind?" id="question">If yes, how many payments are behind?</label>
             <select class="payment" name="payment">
                 <option value="" disabled selected>Select an option</option>
-                <option value="(1 month">1 month</option>
-                <option value=" 3-6 months">3-6 months</option>
+                <option value="1 month">1 month</option>
+                <option value="3-6 months">3-6 months</option>
                 <option value="7-1 years">7-1 years</option>
                 <option value="2+ years">2+ years</option>
             </select>
